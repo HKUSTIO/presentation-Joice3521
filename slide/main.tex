@@ -29,7 +29,7 @@
 
 % Customize frame title
 \setbeamertemplate{frametitle}{
-    \vspace*{0.5cm}
+    \vspace*{0.2cm}
     \insertframetitle
     \vspace*{0.2cm}
     \begin{beamercolorbox}[wd=\paperwidth,ht=0.2pt]{structure}
@@ -78,25 +78,145 @@
         \item Setting \vspace{.2cm}
         \begin{itemize}
             \item A upstream seller $U$ and a downstream buyer $D$ agree on a contract $\mathcal{C}$ from some feasible set. \vspace{.2cm}
-            \item The contract $\mathcal{C} = \{y, t\}$, $t$ is a lump-sum transfer and $y$ includes other provisions. \vspace{.2cm}
+            \item The contract $\mathcal{C} = \{y, t\}$, $y$ includes other provisions and $t$ is a lump-sum transfer. \vspace{.2cm}
             \item Firms' payoffs: $\Pi_U(\mathcal{C})\equiv \pi_U(y) + t$; $\Pi_D(\mathcal{C})\equiv \pi_D(y) - t$ \vspace{.2cm}
         \end{itemize}
-        \item Pareto efficient contract \vspace{.2cm}
-        \begin{itemize}
-            \item $max_{(y,t)\in \mathcal{Y}\mathcal{R}}$
-        \end{itemize}
+        \item The maximization problem \vspace{.2cm}
+        \begin{equation}
+            \begin{aligned}
+            & \max_{(y, t) \in \mathcal{Y} \times \mathbb{R}} \quad \pi_U(y) + t \\
+            & \text{s.t.} \quad \pi_D(y) - t \geq \overline{\Pi}_D
+            \end{aligned}
+            \end{equation}
     \end{itemize}
 \end{frame}
 
+\begin{frame}{Basics - example: successive monopoly setting}
+    \begin{itemize}
+        \item A monopolist manufacturer sells a product to a monopolist retailer. \vspace{.2cm}
+        \begin{itemize}
+            \item Vertically integrated: $p^m(c)\equiv argmax (p-c_m-c_R)D(p)$, $p^m(c_M+c_R)$ maximizes the bilateral surplus. \vspace{.2cm}
+            \item Price unilaterally: $p^m(w+c_R)$ maximizes the retailer's profit. \vspace{.2cm}
+            \item $p^m(w+c_R) > p^m(c_M+c_R)$: double marginalization problem. \vspace{.2cm} 
+        \end{itemize} 
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Basics - example: negotiation by Nash bargaining}
+    \begin{itemize}
+        \item The parties will agree to a contract $\mathcal{C} = \{y, t\}$ that solves 
+        \begin{align}
+            \max_{C \in \mathcal{C}^+} \left[ \pi_D(y) - \overline{\Pi}_D \right]^b \cdot \left[ \pi_U(y) - \overline{\Pi}_U \right]^{1-b}
+        \end{align}
+        \item Take derivatives with respect to $y$ and $t$, and we have
+        \begin{align}
+            \frac{\partial \pi_D(y)}{\partial y_k} + \frac{\partial \pi_U(y)}{\partial y_k} = 0 \quad \text{for } k = 1, \ldots, K
+        \end{align}
+            
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Basics - example: negotiation by Nash bargaining (continued)}
+    \begin{itemize}
+        \item Consider the contract $\mathcal{C}$ only includes the wholesale price $w$. \vspace{.2cm}
+        \item We will have
+        \begin{align}
+            (w - c_M) \overline{D}(w) + \overline{D}(w) = \left( \frac{b}{1 - b} \right) \left( p^* \left( w + c_R \right) - (w - c_R) \right) \overline{D}(w)
+        \end{align}
+        where $\overline{D}(w) \equiv D(p^m(w+c_R))$ is the retail demand conditioning on the wholesale price $w$. \vspace{.2cm}
+        \begin{itemize}
+            \item $b\rightarrow0$: successive monopoly setting. \vspace{.2cm}
+            \item $b\rightarrow1$: implies $w\rightarrow c_M$, maximizing bilateral surplus. \vspace{.2cm}
+        \end{itemize}
+    \end{itemize}
+
+\end{frame}
 
 % Section 3
 % Subsection 1
 % \section{Multilateral settings with externalities}
 \section{Non-cooperative bargaining models}
-\subsection{The offer game}
-\begin{frame}{The offer game}
+\begin{frame}{Multilateral settings with externalities}
+    \begin{itemize}
+        \item Previous case: one-to-one vertical contracting. \vspace{.2cm}
+        \item Things can be complicated: many-to-many with contracting externalities. \vspace{.2cm}
+        \item Two different approaches to analyze more complicated settings. \vspace{.2cm}
+        \begin{itemize}
+            \item Non-cooperative bargaining \vspace{.2cm}
+            \item Nash-in-Nash bargaining \vspace{.2cm}
+        \end{itemize}
+    \end{itemize}
 
 \end{frame}
+
+\subsection{The offer game}
+\begin{frame}{The offer game - introduction}
+    \begin{itemize}
+        \item Two issues\vspace{.2cm}
+        \begin{itemize}
+            \item Contracting parties can make take-it-or-leave-it offers or go back and forth. \vspace{.2cm}
+            \item Whether the offer can be known by the other party. \vspace{.2cm}
+        \end{itemize}
+        \item Begin with non-coorperative approach: only one side of the market has multiple parties, and lump-sum transfers are feasible. \vspace{.2cm}
+        \begin{itemize}
+            \item Public offers \vspace{.2cm}
+            \item Private offers \vspace{.2cm}
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{The offer game - public offers}
+    \begin{itemize}
+        \item The principal can sign a bilateral contract $\mathcal{C}_j=(q_j,t_j)$ with agent $j=1,...,J$. \vspace{.2cm}
+        \item Focus on the equilibria where all agents accept the contract. \vspace{.2cm}
+        \item Agent $j$ will accept the contract if and only if
+        \begin{align*}
+            \pi_j(\mathbf{q}) - t_j \geq \pi_j(0, \mathbf{q}_{-j})
+        \end{align*}
+        \item Given this, the principal will offer $\hat{\mathbf{q}}$ solving
+        \begin{align}
+            \max_{\mathbf{q} \in \mathcal{R}^J} \{\pi_P(\mathbf{q}) + \sum_{j=1} \pi_j(\mathbf{q})\}  - \sum_{j=1} \pi_j(0, \mathbf{q}_{-j})
+        \end{align}
+        where $\sum_{j=1} \pi_j(0, \mathbf{q}_{-j})$ is the reservation payoffs of agents. \vspace{.2cm}
+    \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{The offer game - public offers}
+    \begin{itemize}
+        \item When no externalities on non-traders, the outcome is efficient. However, if there are externalities, the principal has the incentive to distort to lower the reservation payoffs. \vspace{.2cm}
+        \item Negative externalities will lead to large trade, while positive externalities will lead to small trade. \vspace{.2cm}
+        \begin{itemize}
+            \item M\&A contract: reduce competition and increase the benefits to other competing firms. \vspace{.2cm}           
+            \item Exclusive contract: hinder potential entrants and reduce potential benefits to non-traders. \vspace{.2cm}
+        \end{itemize}
+        %\item The principal would determine the aggregate trade $Q$, then allocate $Q$ among agents to minimize the reservation payoffs. Then prinpial's problem becomes \vspace{.2cm}
+        %\begin{align*}
+        %    \max_{Q} \Pi(Q) - R(Q)
+        %\end{align*}
+        %where $R(Q)$ is a non-increasing function under nagative externalities. \vspace{.2cm}
+        %\begin{align*}
+        %    R(Q) \equiv \min_{q \in \mathbb{R}^J} \sum_j \pi_j(0, q_{-j})
+        %\end{align*}
+        %\begin{align*}
+        %    \text{s.t.} \quad \sum_j q_j = Q.
+        %\end{align*}
+    \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{The offer game - private offers}
+    \begin{itemize}
+        \item 
+    \end{itemize}
+
+
+\end{frame}
+
 
 
 \subsection{The bidding game}
