@@ -73,9 +73,15 @@
     \begin{itemize}
         \item One key feature of many industries is a vertical supply chain characterized by an oligopolistic market structure at each level of the chain. \vspace{.2cm}
         \item A model that allows for such margins of adjustment will often be necessary for an accurate prediction of the effects of a policy. \vspace{.2cm}
-        \item 
+        \item From theoretical to empirical work, \vspace{.2cm}
+        \begin{itemize}
+            \item Must work with underlying theoretical models that feature both contracting and competition, yet are tractable and estimable.\vspace{.2cm}
+            \item Requires more detailed data and rich institutional knowledge. \vspace{.2cm}
+        \end{itemize}
     \end{itemize}
 \end{frame}
+
+
 
 % Section 2
 \section{Basics}
@@ -84,7 +90,7 @@
         \item Setting \vspace{.2cm}
         \begin{itemize}
             \item A upstream seller $U$ and a downstream buyer $D$ agree on a contract $\mathcal{C}$ from some feasible set. \vspace{.2cm}
-            \item The contract $\mathcal{C} = \{y, t\}$, $y$ includes other provisions and $t$ is a lump-sum transfer. \vspace{.2cm}
+            \item $\mathcal{C} = \{y, t\}$, $y$ includes other provisions and $t$ is a lump-sum transfer. \vspace{.2cm}
             \item Firms' payoffs: $\Pi_U(\mathcal{C})\equiv \pi_U(y) + t$; $\Pi_D(\mathcal{C})\equiv \pi_D(y) - t$ \vspace{.2cm}
         \end{itemize}
         \item The maximization problem \vspace{.2cm}
@@ -97,6 +103,8 @@
     \end{itemize}
 \end{frame}
 
+
+
 \begin{frame}{Basics - example: successive monopoly setting}
     \begin{itemize}
         \item A monopolist manufacturer sells a product to a monopolist retailer. \vspace{.2cm}
@@ -107,6 +115,8 @@
         \end{itemize} 
     \end{itemize}
 \end{frame}
+
+
 
 \begin{frame}{Basics - example: negotiation by Nash bargaining}
     \begin{itemize}
@@ -121,6 +131,7 @@
             
     \end{itemize}
 \end{frame}
+
 
 
 \begin{frame}{Basics - example: negotiation by Nash bargaining (continued)}
@@ -139,6 +150,8 @@
 
 \end{frame}
 
+
+
 % Section 3
 % Subsection 1
 % \section{Multilateral settings with externalities}
@@ -152,10 +165,10 @@
             \item Many-to-many contracting: Nash-in-Nash bargaining \vspace{.2cm}
         \end{itemize}
         \item Non-cooperative bargaining: offer \& bidding games \vspace{.2cm}
-        \item Nash-in-Nash bargaining \vspace{.2cm}
     \end{itemize}
-
 \end{frame}
+
+
 
 \subsection{The offer game}
 \begin{frame}{The offer game - introduction}
@@ -170,6 +183,7 @@
 \end{frame}
 
 
+
 \begin{frame}{The offer game - introduction (continued)}
     \begin{itemize}
         \item The principal can sign a bilateral contract $\mathcal{C}_j=(q_j,t_j)$ with agent $j=1,...,J$. \vspace{.2cm}
@@ -180,7 +194,6 @@
         \end{align*}
     \end{itemize}
 \end{frame}
-
 
 
 
@@ -200,6 +213,7 @@
 \end{frame}
 
 
+
 \begin{frame}{The offer game - public offers (continued)}
     \begin{block}{Proposition 1}
         \textit{In the public-offer game with lump-sum transfers and absent externalities on non-traders, the equilibrium trade profile $\hat{\mathbf{q}}$ is efficient, i.e., $\hat{\mathbf{q}}\in \mathcal{Q}$.}
@@ -209,6 +223,7 @@
         in an equilibrium trade profile of the public-offer game is $\hat{Q}$. Then with positive (or negative) externalities on non-traders, $Q\leq$ (or $\geq$) $Q^*$.}
     \end{block}
 \end{frame}
+
 
 
 \begin{frame}{The offer game - public offers (continued)}
@@ -235,11 +250,9 @@
         \begin{align*}
             \max_{Q} & \quad \Pi(Q) - R(Q)
         \end{align*}
-        \item Suppose that $\hat{Q}<Q^*$. By definition of $Q^*$ and $R(\cdot)$, we have $\Pi(\hat{Q}) - R(\hat{Q}) < \Pi(Q^*) - R(Q^*)$, contradicting to $\hat{Q}$ to solve equation (5). So we must have $\hat{Q}\geq Q^*$. \vspace{.2cm}
+        \item Suppose that $\hat{Q}<Q^*$. By definition of $Q^*$ and $R(\cdot)$, we have $\Pi(\hat{Q}) - R(\hat{Q}) < \Pi(Q^*) - R(Q^*)$, contradicting to $\hat{Q}$ to solve equation (5). So we must have $\hat{Q}\geq Q^*$.\hfill$\square$ \vspace{.2cm}
     \end{itemize}
 \end{frame}
-
-
 
 
 
@@ -250,20 +263,10 @@
             \item Exclusive contract: hinder potential entrants and reduce potential benefits to non-traders. \vspace{.2cm}
             \item M\&A contract: reduce competition and increase the benefits to other competing firms. \vspace{.2cm}           
         \end{itemize}
-        %\item The principal would determine the aggregate trade $Q$, then allocate $Q$ among agents to minimize the reservation payoffs. Then prinpial's problem becomes \vspace{.2cm}
-        %\begin{align*}
-        %    \max_{Q} \Pi(Q) - R(Q)
-        %\end{align*}
-        %where $R(Q)$ is a non-increasing function under nagative externalities. \vspace{.2cm}
-        %\begin{align*}
-        %    R(Q) \equiv \min_{q \in \mathbb{R}^J} \sum_j \pi_j(0, q_{-j})
-        %\end{align*}
-        %\begin{align*}
-        %    \text{s.t.} \quad \sum_j q_j = Q.
-        %\end{align*}
     \end{itemize}
 
 \end{frame}
+
 
 
 \begin{frame}{The offer game - private offers}
@@ -279,6 +282,7 @@
 \end{frame}
 
 
+
 \begin{frame}{The offer game - private offers (continued)}
     \begin{block}{Proposition 3}
         \textit{In the private-offer game with lump-sum transfers:\\
@@ -286,6 +290,7 @@
         \textit{(ii) Assume Condition $W$ holds and and let $\hat{Q}$ be the aggregate trade in a passive beliefs equilibrium. If externalities on efficient traders are positive (or negative), then $\hat{Q} \leq$ (or $\geq$) $Q^*$.}
     \end{block}
 \end{frame}
+
 
 
 \begin{frame}{The offer game - private offers (continued)}
@@ -315,10 +320,9 @@
                 & > \pi_P(q_j^*) + \sum_j \pi_j(q_j^*, \hat{\mathbf{q}}_{-j})
             \end{aligned}
         \end{equation*}
-        which contradicts $q^*$ being efficient. Hence, we must have $\hat{Q}\geq Q^*$.
+        which contradicts $q^*$ being efficient. Hence, we must have $\hat{Q}\geq Q^*$.\hfill$\square$
     \end{itemize}
 \end{frame}
-
 
 
 
@@ -330,6 +334,7 @@
         \item It is possible for deviating contract offer to induce the agent to reject the offer from a rival principal. \vspace{.2cm}
     \end{itemize}
 \end{frame}
+
 
 
 \begin{frame}{The bidding game (continued)}
@@ -347,13 +352,13 @@
 \end{frame}
 
 
+
 \begin{frame}{The bidding game (continued)}
     \begin{itemize}
         \item Less is known about equilibrium outcomes in settings with contracting externalities for bidding games than for offer games. \vspace{.2cm}
         
     \end{itemize}
 \end{frame}
-
 
 
 
@@ -374,13 +379,15 @@
 \end{frame}
 
 
+
 \begin{frame}{Nash-in-Nash bargaining (continued)}
     \begin{itemize}
         \item A collection of contracts is a Nash-in-Nash equilibrium if each pair's contract solves the bilateral Nash bargaining problem \textit{taking the contracts agreed by all other pairs as given.} \vspace{.2cm}
         \item However, Nash-in-Nash equilibria may involve unreasonable payoff predictions. \vspace{.2cm}
     \end{itemize}
-
 \end{frame}
+
+
 
 % Section 4
 \begin{frame}{Nash-in-Nash bargaining (continued)}
@@ -401,7 +408,6 @@
         \item Under the NNTR protocol, the equilibrium becomes $q_1 = Q^m$, but the retailer earns all of the profits. \vspace{.2cm}
     \end{itemize}
 \end{frame}
-
 
 
 
