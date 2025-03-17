@@ -71,6 +71,8 @@
 \section{Introduction}
 \begin{frame}{Introduction}
     \begin{itemize}
+        \item One key feature of many industries is a vertical supply chain characterized by an oligopolistic market structure at each level of the chain. \vspace{.2cm}
+        \item A model that allows for such margins of adjustment will often be necessary for an accurate prediction of the effects of a policy. \vspace{.2cm}
         \item 
     \end{itemize}
 \end{frame}
@@ -287,12 +289,38 @@
 
 
 \begin{frame}{The offer game - private offers (continued)}
-    \textit{Proof of Proposition 3} \vspace{.2cm}
+    \textit{Proof of Proposition 3 (i)} \vspace{.2cm}
     \begin{itemize}
-        \item[(i)]
+        \item Notice that for any passive beliefs equilibrium trade profile $\hat{q}$, and any efficient trade profile $q^*\in Q^*$, we have
+        \begin{equation}
+            \begin{aligned}
+                \pi_P(\hat{\mathbf{q}}) + \sum_j \pi_j(\hat{q}_j,\hat{\mathbf{q}}_{-j}) & \geq \pi_P(\mathbf{q}^*) + \sum_j \pi_j(q_j^*,\hat{\mathbf{q}}_{-j})\\
+                & = \pi_P(\mathbf{q}^*) + \sum_j \pi_j(q_j^*, \mathbf{q}^*_{-j})
+            \end{aligned}    
+        \end{equation}
+        Together they imply $\hat{\mathbf{q}}$ is efficient. \vspace{.2cm}
     \end{itemize}
-
 \end{frame}
+
+
+
+\begin{frame}{The offer game - private offers (continued)}
+    \textit{Proof of Proposition 3 (ii)} \vspace{.2cm}
+    \begin{itemize}
+        \item Suppose there are negative externalities on efficient traders but $\hat{Q}<Q^*$. \vspace{.2cm}
+        \item Under Condition $W$, there is some efficient trade profile $q^*$ such that $\sum_j q^*_j = Q^*$ and $\hat{q}_j<q_j^*$ for all $j$. \vspace{.2cm}
+        \begin{equation*}
+            \begin{aligned}
+                \pi_P(\hat{\mathbf{q}}) + \sum_j \pi_j(\hat{q}_j, \hat{\mathbf{q}}_{-j}) & \geq \pi_P(q_j^*) + \sum_j \pi_j(q_j^*, \hat{\mathbf{q}}_{-j})  \\
+                & > \pi_P(q_j^*) + \sum_j \pi_j(q_j^*, \hat{\mathbf{q}}_{-j})
+            \end{aligned}
+        \end{equation*}
+        which contradicts $q^*$ being efficient. Hence, we must have $\hat{Q}\geq Q^*$.
+    \end{itemize}
+\end{frame}
+
+
+
 
 \subsection{The bidding game}
 \begin{frame}{The bidding game}
