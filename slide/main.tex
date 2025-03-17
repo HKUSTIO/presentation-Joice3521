@@ -26,6 +26,8 @@
 \setbeamertemplate{footline}[frame number]
 \setbeamerfont{footline}{size=\scriptsize}
 
+\renewcommand{\raggedright}{\leftskip=0pt \rightskip=12pt plus 0cm}
+
 
 % Customize frame title
 \setbeamertemplate{frametitle}{
@@ -43,11 +45,13 @@
 % Packages
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{amsfonts}
 \usepackage{hyperref}
 
 % Title page information
 \title{Chapter 9 Structural Empirical Analysis of Vertical Contracting}
-\author{Presented by Siyuan (Bruce) Jin and Yangfan Sun}
+\subtitle{Theory}
+\author{Presented by Yangfan Sun}
 \institute{Hong Kong University of Science and Technology}
 \date{March 2025}
 
@@ -59,7 +63,7 @@
 \end{frame}
 
 % Table of contents
-\begin{frame}{Outline - Theory}
+\begin{frame}{Outline}
     \tableofcontents
 \end{frame}
 
@@ -95,7 +99,7 @@
     \begin{itemize}
         \item A monopolist manufacturer sells a product to a monopolist retailer. \vspace{.2cm}
         \begin{itemize}
-            \item Vertically integrated: $p^m(c)\equiv argmax (p-c_m-c_R)D(p)$, $p^m(c_M+c_R)$ maximizes the bilateral surplus. \vspace{.2cm}
+            \item Vertically integrated: $p^m(c)\equiv \arg\max (p-c_m-c_R)D(p)$, $p^m(c_M+c_R)$ maximizes the bilateral surplus. \vspace{.2cm}
             \item Price unilaterally: $p^m(w+c_R)$ maximizes the retailer's profit. \vspace{.2cm}
             \item $p^m(w+c_R) > p^m(c_M+c_R)$: double marginalization problem. \vspace{.2cm} 
         \end{itemize} 
@@ -140,12 +144,13 @@
 \begin{frame}{Multilateral settings with externalities}
     \begin{itemize}
         \item Previous case: one-to-one vertical contracting. \vspace{.2cm}
-        \item Things can be complicated: many-to-many with contracting externalities. \vspace{.2cm}
-        \item Two different approaches to analyze more complicated settings. \vspace{.2cm}
+        \item Things can be complicated. \vspace{.2cm}
         \begin{itemize}
-            \item Non-cooperative bargaining \vspace{.2cm}
-            \item Nash-in-Nash bargaining \vspace{.2cm}
+            \item One-to-many contracting: non-cooperative bargaining \vspace{.2cm}
+            \item Many-to-many contracting: Nash-in-Nash bargaining \vspace{.2cm}
         \end{itemize}
+        \item Non-cooperative bargaining: offer \& bidding games \vspace{.2cm}
+        \item Nash-in-Nash bargaining \vspace{.2cm}
     \end{itemize}
 
 \end{frame}
@@ -153,12 +158,8 @@
 \subsection{The offer game}
 \begin{frame}{The offer game - introduction}
     \begin{itemize}
-        \item Two issues\vspace{.2cm}
-        \begin{itemize}
-            \item Contracting parties can make take-it-or-leave-it offers or go back and forth. \vspace{.2cm}
-            \item Whether the offer can be known by the other party. \vspace{.2cm}
-        \end{itemize}
-        \item Begin with non-coorperative approach: only one side of the market has multiple parties, and lump-sum transfers are feasible. \vspace{.2cm}
+        \item Contracting parties make take-it-or-leave-it offers. Lump-sum transfers are feasible. \vspace{.2cm}
+        \item Whether the offer can be known by the other party. \vspace{.2cm}
         \begin{itemize}
             \item Public offers \vspace{.2cm}
             \item Private offers \vspace{.2cm}
@@ -167,9 +168,22 @@
 \end{frame}
 
 
-\begin{frame}{The offer game - public offers}
+\begin{frame}{The offer game - introduction (continued)}
     \begin{itemize}
         \item The principal can sign a bilateral contract $\mathcal{C}_j=(q_j,t_j)$ with agent $j=1,...,J$. \vspace{.2cm}
+        \item The principal's payoff is $\pi_P(\mathbf{q})+\sum_{j}t_j$ and agent $j$'s payoff is $\pi_j(\mathbf{q})-t_j$. \vspace{.2cm}
+        \item Condition $W$: the joint payoff depends only on the aggregate trade $Q$. \vspace{.2cm}
+        \begin{align*}
+            \mathcal{Q}^* \equiv \arg \max_{\mathbf{q} \in \mathbb{R}^J} \pi_P(\mathbf{q}) + \sum_j \pi_j(\mathbf{q})
+        \end{align*}
+    \end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}{The offer game - public offers}
+    \begin{itemize}
         \item Focus on the equilibria where all agents accept the contract. \vspace{.2cm}
         \item Agent $j$ will accept the contract if and only if
         \begin{align*}
@@ -179,19 +193,60 @@
         \begin{align}
             \max_{\mathbf{q} \in \mathcal{R}^J} \{\pi_P(\mathbf{q}) + \sum_{j=1} \pi_j(\mathbf{q})\}  - \sum_{j=1} \pi_j(0, \mathbf{q}_{-j})
         \end{align}
-        where $\sum_{j=1} \pi_j(0, \mathbf{q}_{-j})$ is the reservation payoffs of agents. \vspace{.2cm}
+        \item The inefficiency comes from the externalities on non-traders. If there are externalities, the principal has the incentive to distort to lower the reservation payoffs. \vspace{.2cm}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{The offer game - public offers (continued)}
+    \begin{block}{Proposition 1}
+        \textit{In the public-offer game with lump-sum transfers and absent externalities on non-traders, the equilibrium trade profile $\hat{\mathbf{q}}$ is efficient, i.e., $\hat{\mathbf{q}}\in \mathcal{Q}$.}
+    \end{block}\vspace{.2cm}
+    \begin{block}{Proposition 2}
+        \textit{Assume Condition $W$ holds and suppose that the aggregate trade
+        in an equilibrium trade profile of the public-offer game is $\hat{Q}$. Then with positive (or negative) externalities on non-traders, $Q\leq$ (or $\geq$) $Q^*$.}
+    \end{block}
+\end{frame}
+
+
+\begin{frame}{The offer game - public offers (continued)}
+    \textit{Proof of Proposition 2} \vspace{.2cm}
+    \begin{itemize}
+        \item Suppose that externalities on non-traders are negative. \vspace{.2cm}
+        \item The minimized value of reservation utility becomes \vspace{.2cm}
+        \begin{equation*}
+            \begin{aligned}
+                R(Q) \equiv & \min_{q \in \mathbb{R}^J} \sum_j \pi_j(0, \mathbf{q}_{-j}) \\
+                & \text{s.t. } \sum_j q_j = Q
+            \end{aligned}
+        \end{equation*}
+        Note that $R(\cdot)$ is a non-increasing function. \vspace{.2cm}
     \end{itemize}
 \end{frame}
 
 
 
-\begin{frame}{The offer game - public offers}
+\begin{frame}{The offer game - public offers (continued)}
+    \textit{Proof of Proposition 2 (cont'd)} \vspace{.2cm}
     \begin{itemize}
-        \item When no externalities on non-traders, the outcome is efficient. However, if there are externalities, the principal has the incentive to distort to lower the reservation payoffs. \vspace{.2cm}
+        \item The principal's problem becomes \vspace{.2cm}
+        \begin{align*}
+            \max_{Q} & \quad \Pi(Q) - R(Q)
+        \end{align*}
+        \item Suppose that $\hat{Q}<Q^*$. By definition of $Q^*$ and $R(\cdot)$, we have $\Pi(\hat{Q}) - R(\hat{Q}) < \Pi(Q^*) - R(Q^*)$, contradicting to $\hat{Q}$ to solve equation (5). So we must have $\hat{Q}\geq Q^*$. \vspace{.2cm}
+    \end{itemize}
+\end{frame}
+
+
+
+
+
+\begin{frame}{The offer game - public offers (continued)}
+    \begin{itemize}
         \item Negative externalities will lead to large trade, while positive externalities will lead to small trade. \vspace{.2cm}
         \begin{itemize}
-            \item M\&A contract: reduce competition and increase the benefits to other competing firms. \vspace{.2cm}           
             \item Exclusive contract: hinder potential entrants and reduce potential benefits to non-traders. \vspace{.2cm}
+            \item M\&A contract: reduce competition and increase the benefits to other competing firms. \vspace{.2cm}           
         \end{itemize}
         %\item The principal would determine the aggregate trade $Q$, then allocate $Q$ among agents to minimize the reservation payoffs. Then prinpial's problem becomes \vspace{.2cm}
         %\begin{align*}
@@ -211,36 +266,115 @@
 
 \begin{frame}{The offer game - private offers}
     \begin{itemize}
-        \item 
+        \item The offer can only be observed by the agent. \vspace{.2cm}
+        \item Assume agents hold passive beliefs: they believe other agents received their equilibrium offers even when they receive an unexpected offer. \vspace{.2cm}
+        \item Similar to the public-offer game, the equlibrium trade profile $\hat{\mathbf{q}}=\{\hat{q_1},...,\hat{q_J}\}$ 
+        \begin{align*}
+            \hat{q} \in \arg \max_{q \in \mathbb{R}^J} \pi_P(\mathbf{q}) + \sum_j [ \pi_j(q_j, \hat{\mathbf{q}}_{-j}) - \pi_j(0, \hat{\mathbf{q}}_{-j})]
+        \end{align*}
+        \item The inefficiency comes from the externality on efficient traders.
     \end{itemize}
-
-
 \end{frame}
 
 
+\begin{frame}{The offer game - private offers (continued)}
+    \begin{block}{Proposition 3}
+        \textit{In the private-offer game with lump-sum transfers:\\
+        (i) If there are no externalities on efficient traders, then any passive beliefs equilibrium trade profile is efficient.}\\
+        \textit{(ii) Assume Condition $W$ holds and and let $\hat{Q}$ be the aggregate trade in a passive beliefs equilibrium. If externalities on efficient traders are positive (or negative), then $\hat{Q} \leq$ (or $\geq$) $Q^*$.}
+    \end{block}
+\end{frame}
+
+
+\begin{frame}{The offer game - private offers (continued)}
+    \textit{Proof of Proposition 3} \vspace{.2cm}
+    \begin{itemize}
+        \item[(i)]
+    \end{itemize}
+
+\end{frame}
 
 \subsection{The bidding game}
 \begin{frame}{The bidding game}
-
+    \begin{itemize}
+        \item Multiple principal make offers to the single agent, who then decide whether to accept or reject each offer. \vspace{.2cm}
+        \item Only unilateral contract deviations are possible. \vspace{.2cm}
+        \item It is possible for deviating contract offer to induce the agent to reject the offer from a rival principal. \vspace{.2cm}
+    \end{itemize}
 \end{frame}
+
+
+\begin{frame}{The bidding game (continued)}
+    An example \vspace{.2cm}
+    \begin{itemize}
+        \item There are two manufacturers. Each manufacturer $j$ must earn her marginal contribution to the joint monopoly profit given the trade with the other manufacturer.
+        \begin{align}
+            t_j - c_j q_j^* = [ P(q_1^* + q_2^*)(q_1^* + q_2^*) - c_1 q_1^* - c_2 q_2^*] - [ P(q_j^*, 0)q_j^* - c_j q_j^*]
+        \end{align}
+        \item Have the incentive to provide a exclusive offer.
+        \begin{align}
+            q_k^e = \arg \max_{q_k} P(q_k, 0) q_k - c_k q_k
+        \end{align}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{The bidding game (continued)}
+    \begin{itemize}
+        \item Less is known about equilibrium outcomes in settings with contracting externalities for bidding games than for offer games. \vspace{.2cm}
+        
+    \end{itemize}
+\end{frame}
+
+
+
 
 % Subsection 2
 \section{Nash-in-Nash bargaining}
 \begin{frame}{Nash-in-Nash bargaining}
-    
+    \begin{itemize}
+        \item Consider a setting with $I$ sellers and $J$ buyers. \vspace{.2cm}
+        \item Each pair $ij$ may agree to a contract $\mathbb{C}_{ij}\in\mathcal{C}_{ij}$. Given a collection of contracts between all pairs $i$ and $j$, $\mathbb{C}\equiv\{\mathbb{C}_{ij}\}$, downstream firm $j$'s payoff is $\Pi_{Dj}(\mathbb{C})$ and upstream firm $i$'s payoff is $\Pi_{Uj}(\mathbb{C})$. \vspace{.2cm}
+        \item Contracts $\hat{\mathbb{C}}\equiv \{\hat{\mathbb{C}}_{ij}\}$ constitute a Nash-in-Nash equilibrium if for all $ij$ such that $\hat{\mathbb{C}}_{ij}\neq \mathbb{C}$,  \vspace{.2cm}
+        \begin{equation}
+        \begin{aligned}
+            \hat{\mathbb{C}}_{ij} \in \arg &\max_{\mathbb{C}_{ij} \in \mathcal{C}_{ij}^+ (\hat{\mathbb{C}}_{-ij})} [ \Pi_{Dj}(\mathbb{C}_{ij},\hat{\mathbb{C}}_{-ij}) - \Pi_{Dj}(\mathbb{C}_{0},\hat{\mathbb{C}}_{-ij})]^{b_{ij}}\\
+            & \times [ \Pi_{Uj}(\mathbb{C}_{ij},\hat{\mathbb{C}}_{-ij}) - \Pi_{Uj}(\mathbb{C}_{0},\hat{\mathbb{C}}_{-ij})]^{1-b_{ij}}
+        \end{aligned}
+        \end{equation}
+    \end{itemize}
 \end{frame}
 
 
+\begin{frame}{Nash-in-Nash bargaining (continued)}
+    \begin{itemize}
+        \item A collection of contracts is a Nash-in-Nash equilibrium if each pair's contract solves the bilateral Nash bargaining problem \textit{taking the contracts agreed by all other pairs as given.} \vspace{.2cm}
+        \item However, Nash-in-Nash equilibria may involve unreasonable payoff predictions. \vspace{.2cm}
+    \end{itemize}
 
-
+\end{frame}
 
 % Section 4
-\begin{frame}{Conclusion}
-
+\begin{frame}{Nash-in-Nash bargaining (continued)}
+    An example \vspace{.2cm}
+    \begin{itemize}
+        \item There are two manufacturers and one retailer, with equal bargaining power between them. Let $Q^m$ denote the joint monopoly sales level for the vertical structure. \vspace{.2cm}
+        \item One possible Nash-in-Nash equilibrium is $q_1 = Q^m$, $q_2 = 0$. Manufacturer 1 and the retailer share the profits equally. \vspace{.2cm}
+        \item However, in the bidding/offer game, all of the profits would be earned by the retailer. \vspace{.2cm}
+    \end{itemize}
 \end{frame}
 
-\end{document} 
 
-    %\begin{block}{Important Block}
-    %    Key information goes here
-    %\end{block}
+
+\begin{frame}{Nash-in-Nash bargaining (continued)}
+    Nash-in-Nash with Threat of Replacement (Ho and Lee, 2019) \vspace{.2cm}
+    \begin{itemize}
+        \item The retailer can credibly threaten to replace the manufacturer with a new manufacturer. \vspace{.2cm} 
+        \item Under the NNTR protocol, the equilibrium becomes $q_1 = Q^m$, but the retailer earns all of the profits. \vspace{.2cm}
+    \end{itemize}
+\end{frame}
+
+
+
+
+\end{document}
