@@ -250,7 +250,7 @@
         \begin{align*}
             \max_{Q} & \quad \Pi(Q) - R(Q)
         \end{align*}
-        \item Suppose that $\hat{Q}>Q^*$. By definition of $R(\cdot)$, we have $\Pi(\hat{Q}) - \Pi(Q^*) > R(\hat{Q}) - R(Q^*) \geq 0$, which contradicts the optimality condition as $\hat{Q}$ should be chosen instead of $Q^*$. So we must have $\hat{Q}\leq Q^*$.\hfill$\square$ \vspace{.2cm}
+        \item Suppose that $\hat{Q}>Q^*$. By definition of $Q^*$ and the fact that $R(\cdot)$ is a non-decreasing function, we have $\Pi(\hat{Q}) - R(\hat{Q}) < \Pi(Q^*) - R(Q^*)$, which contradicts to $\hat{Q}$ solving equation (5). So we must have $\hat{Q}\leq Q^*$.\hfill$\square$ \vspace{.2cm}
     \end{itemize}
 \end{frame}
 
