@@ -139,7 +139,7 @@
         \item Consider the contract $\mathcal{C}$ only includes the wholesale price $w$. \vspace{.2cm}
         \item We will have
         \begin{align}
-            (w - c_M) \overline{D}(w) + \overline{D}(w) = \left( \frac{b}{1 - b} \right) \left( p^* \left( w + c_R \right) - (w - c_R) \right) \overline{D}(w)
+            (w - c_M) \overline{D}'(w) + \overline{D}(w) = ( \frac{b}{1 - b} ) (\frac{w-c_M}{p^m ( w + c_R) - (w + c_R)}) \overline{D}(w)
         \end{align}
         where $\overline{D}(w) \equiv D(p^m(w+c_R))$ is the retail demand conditioning on the wholesale price $w$. \vspace{.2cm}
         \begin{itemize}
@@ -188,7 +188,7 @@
     \begin{itemize}
         \item The principal can sign a bilateral contract $\mathcal{C}_j=(q_j,t_j)$ with agent $j=1,...,J$. \vspace{.2cm}
         \item The principal's payoff is $\pi_P(\mathbf{q})+\sum_{j}t_j$ and agent $j$'s payoff is $\pi_j(\mathbf{q})-t_j$. \vspace{.2cm}
-        \item Condition $W$: the joint payoff depends only on the aggregate trade $Q$. \vspace{.2cm}
+        \item Condition $W$: the joint payoff depends only on the aggregate trade $Q\equiv\sum_jq_j$. When it holds, we also assume that all efficient trade profiles $\mathbf{q}^*\in\mathcal{Q}^*$ have the same aggregate trade $Q^*$. \vspace{.2cm}
         \begin{align*}
             \mathcal{Q}^* \equiv \arg \max_{\mathbf{q} \in \mathbb{R}^J} \pi_P(\mathbf{q}) + \sum_j \pi_j(\mathbf{q})
         \end{align*}
@@ -216,7 +216,7 @@
 
 \begin{frame}{The offer game - public offers (continued)}
     \begin{block}{Proposition 1}
-        \textit{In the public-offer game with lump-sum transfers and absent externalities on non-traders, the equilibrium trade profile $\hat{\mathbf{q}}$ is efficient, i.e., $\hat{\mathbf{q}}\in \mathcal{Q}$.}
+        \textit{In the public-offer game with lump-sum transfers and absent externalities on non-traders, the equilibrium trade profile $\hat{\mathbf{q}}$ is efficient, i.e., $\hat{\mathbf{q}}\in \mathcal{Q}^*$.}
     \end{block}\vspace{.2cm}
     \begin{block}{Proposition 2}
         \textit{Assume Condition $W$ holds and suppose that the aggregate trade
@@ -229,7 +229,7 @@
 \begin{frame}{The offer game - public offers (continued)}
     \textit{Proof of Proposition 2} \vspace{.2cm}
     \begin{itemize}
-        \item Suppose that externalities on non-traders are negative. \vspace{.2cm}
+        \item Suppose that externalities on non-traders are positive. \vspace{.2cm}
         \item The minimized value of reservation utility becomes \vspace{.2cm}
         \begin{equation*}
             \begin{aligned}
@@ -237,7 +237,7 @@
                 & \text{s.t. } \sum_j q_j = Q
             \end{aligned}
         \end{equation*}
-        Note that $R(\cdot)$ is a non-increasing function. \vspace{.2cm}
+        Note that $R(\cdot)$ is a non-decreasing function. \vspace{.2cm}
     \end{itemize}
 \end{frame}
 
@@ -250,7 +250,7 @@
         \begin{align*}
             \max_{Q} & \quad \Pi(Q) - R(Q)
         \end{align*}
-        \item Suppose that $\hat{Q}<Q^*$. By definition of $Q^*$ and $R(\cdot)$, we have $\Pi(\hat{Q}) - R(\hat{Q}) < \Pi(Q^*) - R(Q^*)$, contradicting to $\hat{Q}$ to solve equation (5). So we must have $\hat{Q}\geq Q^*$.\hfill$\square$ \vspace{.2cm}
+        \item Suppose that $\hat{Q}>Q^*$. By definition of $R(\cdot)$, we have $\Pi(\hat{Q}) - \Pi(Q^*) > R(\hat{Q}) - R(Q^*) \geq 0$, which contradicts the optimality condition as $\hat{Q}$ should be chosen instead of $Q^*$. So we must have $\hat{Q}\leq Q^*$.\hfill$\square$ \vspace{.2cm}
     \end{itemize}
 \end{frame}
 
@@ -275,7 +275,7 @@
         \item Assume agents hold passive beliefs: they believe other agents received their equilibrium offers even when they receive an unexpected offer. \vspace{.2cm}
         \item Similar to the public-offer game, the equlibrium trade profile $\hat{\mathbf{q}}=\{\hat{q_1},...,\hat{q_J}\}$ 
         \begin{align*}
-            \hat{q} \in \arg \max_{q \in \mathbb{R}^J} \pi_P(\mathbf{q}) + \sum_j [ \pi_j(q_j, \hat{\mathbf{q}}_{-j}) - \pi_j(0, \hat{\mathbf{q}}_{-j})]
+            \hat{\mathbf{q}} \in \arg \max_{q \in \mathbb{R}^J} \pi_P(\mathbf{q}) + \sum_j [ \pi_j(q_j, \hat{\mathbf{q}}_{-j}) - \pi_j(0, \hat{\mathbf{q}}_{-j})]
         \end{align*}
         \item The inefficiency comes from the externality on efficient traders.
     \end{itemize}
@@ -316,11 +316,11 @@
         \item Under Condition $W$, there is some efficient trade profile $q^*$ such that $\sum_j q^*_j = Q^*$ and $\hat{q}_j<q_j^*$ for all $j$. \vspace{.2cm}
         \begin{equation*}
             \begin{aligned}
-                \pi_P(\hat{\mathbf{q}}) + \sum_j \pi_j(\hat{q}_j, \hat{\mathbf{q}}_{-j}) & \geq \pi_P(q_j^*) + \sum_j \pi_j(q_j^*, \hat{\mathbf{q}}_{-j})  \\
-                & > \pi_P(q_j^*) + \sum_j \pi_j(q_j^*, \hat{\mathbf{q}}_{-j})
+                \pi_P(\hat{\mathbf{q}}) + \sum_j \pi_j(\hat{q}_j, \hat{\mathbf{q}}_{-j}) & \geq \pi_P(\mathbf{q}^*) + \sum_j \pi_j(q_j^*, \hat{\mathbf{q}}_{-j})  \\
+                & > \pi_P(\mathbf{q}^*) + \sum_j \pi_j(q_j^*, \hat{\mathbf{q}}^*_{-j})
             \end{aligned}
         \end{equation*}
-        which contradicts $q^*$ being efficient. Hence, we must have $\hat{Q}\geq Q^*$.\hfill$\square$
+        which contradicts $\mathbf{q}^*$ being efficient. Hence, we must have $\hat{Q}\geq Q^*$.\hfill$\square$
     \end{itemize}
 \end{frame}
 
