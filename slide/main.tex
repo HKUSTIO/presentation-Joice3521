@@ -109,7 +109,8 @@
     \begin{itemize}
         \item A monopolist manufacturer sells a product to a monopolist retailer. \vspace{.2cm}
         \begin{itemize}
-            \item Vertically integrated: $p^m(c)\equiv \arg\max (p-c_m-c_R)D(p)$, $p^m(c_M+c_R)$ maximizes the bilateral surplus. \vspace{.2cm}
+            \item $p^m(c)\equiv \arg\max (p-c)D(p)$ \vspace{.2cm}
+            \item Vertically integrated: $p^m(c_M+c_R)$ maximizes the bilateral surplus. \vspace{.2cm}
             \item Price unilaterally: $p^m(w+c_R)$ maximizes the retailer's profit. \vspace{.2cm}
             \item $p^m(w+c_R) > p^m(c_M+c_R)$: double marginalization problem. \vspace{.2cm} 
         \end{itemize} 
@@ -122,13 +123,13 @@
     \begin{itemize}
         \item The parties will agree to a contract $\mathcal{C} = \{y, t\}$ that solves 
         \begin{align}
-            \max_{C \in \mathcal{C}^+} \left[ \pi_D(y) - \overline{\Pi}_D \right]^b \cdot \left[ \pi_U(y) - \overline{\Pi}_U \right]^{1-b}
+            \max_{C \in \mathcal{C}^+} \left[ \Pi_D(y,t) - \overline{\Pi}_D \right]^b \cdot \left[ \Pi_U(y,t) - \overline{\Pi}_U \right]^{1-b}
         \end{align}
         \item Take derivatives with respect to $y$ and $t$, and we have
         \begin{align}
             \frac{\partial \pi_D(y)}{\partial y_k} + \frac{\partial \pi_U(y)}{\partial y_k} = 0 \quad \text{for } k = 1, \ldots, K
         \end{align}
-            
+        which is the first-order condition for maximizing the bilateral surplus $$\pi_D(y) + \pi_U(y)$$ \vspace{.2cm}
     \end{itemize}
 \end{frame}
 
@@ -273,10 +274,13 @@
     \begin{itemize}
         \item The offer can only be observed by the agent. \vspace{.2cm}
         \item Assume agents hold passive beliefs: they believe other agents received their equilibrium offers even when they receive an unexpected offer. \vspace{.2cm}
-        \item Similar to the public-offer game, the equlibrium trade profile $\hat{\mathbf{q}}=\{\hat{q_1},...,\hat{q_J}\}$ 
-        \begin{align*}
-            \hat{\mathbf{q}} \in \arg \max_{q \in \mathbb{R}^J} \pi_P(\mathbf{q}) + \sum_j [ \pi_j(q_j, \hat{\mathbf{q}}_{-j}) - \pi_j(0, \hat{\mathbf{q}}_{-j})]
-        \end{align*}
+        \item Tthe equlibrium trade profile $\hat{\mathbf{q}}=\{\hat{q_1},...,\hat{q_J}\}$ 
+        \begin{equation}
+            \begin{aligned}
+                \hat{\mathbf{q}} \in &\arg \max_{q \in \mathbb{R}^J} \pi_P(\mathbf{q}) + \sum_j [\pi_j(q_j, \hat{\mathbf{q}}_{-j}) - \pi_j(0, \hat{\mathbf{q}}_{-j})]\\
+                & \arg \max_{q \in \mathbb{R}^J} \pi_P(\mathbf{q}) + \sum_j \pi_j(q_j, \hat{\mathbf{q}}_{-j})
+            \end{aligned}               
+        \end{equation}
         \item The inefficiency comes from the externality on efficient traders.
     \end{itemize}
 \end{frame}
